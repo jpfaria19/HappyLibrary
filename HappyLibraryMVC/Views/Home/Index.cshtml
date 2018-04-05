@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <p class="lead">Bem vindo a HappyLibrary, selecione abaixo o que você deseja visualizar.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Lista de Autores</h2>
+        <p>@Html.ActionLink("Lista de Autores", "Index", "Authors")</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Lista de Livros</h2>
+        <p>@Html.ActionLink("Lista de Livros", "Index", "Books")</p>
+    </div>
+</div>
