@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2003
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{78B65F8B-5E0E-45C5-A2EC-9489CF4FE735}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyLibraryMVC", "HappyLibraryMVC\HappyLibraryMVC.csproj", "{203E878E-EEB2-4B15-A6B3-A2E4D95D5CCD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{89CCA538-9445-43E4-A6CA-4E441892DC60}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{0D5968EE-13F4-4DF2-B02D-5DAA9E322D98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{374DF5BB-CFFF-4B32-9B92-8476C66ABEC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyLibraryWebApi", "HappyLibraryWebApi\HappyLibraryWebApi.csproj", "{BE6344C4-2209-4DA7-AD4A-6DAFD7B871EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyLibraryMVC", "HappyLibraryMVC\HappyLibraryMVC.csproj", "{CA082685-402F-4525-92BC-96BB78E50584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +25,6 @@ Global
 		{78B65F8B-5E0E-45C5-A2EC-9489CF4FE735}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78B65F8B-5E0E-45C5-A2EC-9489CF4FE735}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78B65F8B-5E0E-45C5-A2EC-9489CF4FE735}.Release|Any CPU.Build.0 = Release|Any CPU
-		{203E878E-EEB2-4B15-A6B3-A2E4D95D5CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{203E878E-EEB2-4B15-A6B3-A2E4D95D5CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{203E878E-EEB2-4B15-A6B3-A2E4D95D5CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{203E878E-EEB2-4B15-A6B3-A2E4D95D5CCD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{89CCA538-9445-43E4-A6CA-4E441892DC60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{89CCA538-9445-43E4-A6CA-4E441892DC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89CCA538-9445-43E4-A6CA-4E441892DC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +33,18 @@ Global
 		{0D5968EE-13F4-4DF2-B02D-5DAA9E322D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D5968EE-13F4-4DF2-B02D-5DAA9E322D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D5968EE-13F4-4DF2-B02D-5DAA9E322D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{374DF5BB-CFFF-4B32-9B92-8476C66ABEC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374DF5BB-CFFF-4B32-9B92-8476C66ABEC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374DF5BB-CFFF-4B32-9B92-8476C66ABEC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374DF5BB-CFFF-4B32-9B92-8476C66ABEC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE6344C4-2209-4DA7-AD4A-6DAFD7B871EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE6344C4-2209-4DA7-AD4A-6DAFD7B871EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE6344C4-2209-4DA7-AD4A-6DAFD7B871EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE6344C4-2209-4DA7-AD4A-6DAFD7B871EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA082685-402F-4525-92BC-96BB78E50584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA082685-402F-4525-92BC-96BB78E50584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA082685-402F-4525-92BC-96BB78E50584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA082685-402F-4525-92BC-96BB78E50584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,12 +1,10 @@
-﻿using DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DAL;
 
-namespace Repositories
+namespace Repositories.Repositories
 {
     public abstract class BaseRepository<T> : IDisposable where T : class
     {
@@ -36,6 +34,7 @@ namespace Repositories
 
         public void Remove(T obj)
         {
+            Ct.Entry(obj).State = EntityState.Deleted;
             Ct.Set<T>().Remove(obj);
             Ct.SaveChanges();
         }

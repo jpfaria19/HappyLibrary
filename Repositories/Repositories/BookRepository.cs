@@ -1,6 +1,6 @@
-﻿using DAL.Model;
+﻿using BLL;
 
-namespace Repositories
+namespace Repositories.Repositories
 {
     public class BookRepository : BaseRepository<Book>
     {
