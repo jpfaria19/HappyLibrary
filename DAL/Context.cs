@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using DAL.Model;
+using BLL;
 
 namespace DAL
 {
@@ -7,7 +7,7 @@ namespace DAL
     {
         public Context()
             : base("Library")
-        {
+        {   
         }
 
         public virtual DbSet<Author> Authors { get; set; }

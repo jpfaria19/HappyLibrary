@@ -63,13 +63,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
-    <Compile Include="Migrations\201804050014579_Init.cs" />
-    <Compile Include="Migrations\201804050014579_Init.Designer.cs">
-      <DependentUpon>201804050014579_Init.cs</DependentUpon>
+    <Compile Include="Migrations\201804132318049_Frist.cs" />
+    <Compile Include="Migrations\201804132318049_Frist.Designer.cs">
+      <DependentUpon>201804132318049_Frist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804152224180_SecondUpdate.cs" />
+    <Compile Include="Migrations\201804152224180_SecondUpdate.Designer.cs">
+      <DependentUpon>201804152224180_SecondUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Author.cs" />
-    <Compile Include="Model\Book.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -98,8 +100,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804050014579_Init.resx">
-      <DependentUpon>201804050014579_Init.cs</DependentUpon>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{0d5968ee-13f4-4df2-b02d-5daa9e322d98}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804132318049_Frist.resx">
+      <DependentUpon>201804132318049_Frist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804152224180_SecondUpdate.resx">
+      <DependentUpon>201804152224180_SecondUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
