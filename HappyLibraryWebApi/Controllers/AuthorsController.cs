@@ -14,7 +14,7 @@ namespace HappyLibraryWebApi.Controllers
         // GET: api/Author
         public IEnumerable<Author> Get()
         {
-            return _aS.GetAll().ToList();
+            return _aS.GetAll();
         }
 
         // GET: api/Author/5

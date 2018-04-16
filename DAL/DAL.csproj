@@ -63,13 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
-    <Compile Include="Migrations\201804132318049_Frist.cs" />
-    <Compile Include="Migrations\201804132318049_Frist.Designer.cs">
-      <DependentUpon>201804132318049_Frist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804152224180_SecondUpdate.cs" />
-    <Compile Include="Migrations\201804152224180_SecondUpdate.Designer.cs">
-      <DependentUpon>201804152224180_SecondUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\201804162141032_First.cs" />
+    <Compile Include="Migrations\201804162141032_First.Designer.cs">
+      <DependentUpon>201804162141032_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,11 +102,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804132318049_Frist.resx">
-      <DependentUpon>201804132318049_Frist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804152224180_SecondUpdate.resx">
-      <DependentUpon>201804152224180_SecondUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804162141032_First.resx">
+      <DependentUpon>201804162141032_First.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,7 +30,7 @@ namespace BLL
 
         [Required(ErrorMessage = "Digite a data de nascimento"), Column(Order = 4)]
         [DisplayName("Data de nascimento")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Birthday { get; set; }
         
         public virtual ICollection<Book> Books { get; set; }
