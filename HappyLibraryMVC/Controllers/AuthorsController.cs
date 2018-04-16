@@ -1,113 +1,105 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using BLL;
-using DAL.Model;
 
 namespace HappyLibraryMVC.Controllers
 {
     public class AuthorsController : Controller
     {
-        private AuthorService _As = new AuthorService();
-
         // GET: Authors
+        [Authorize]
         public ActionResult Index()
         {
-            return View(_As.GetAll());
+            HttpClient client = MVCUtil.GetClient("userToken");
+
+            Author appUser = JsonConvert.DeserializeObject<Author>(client.GetStringAsync("api/Authors/Get").Result);
+
+            return View();
         }
 
         // GET: Authors/Details/5
+        [Authorize]
         public ActionResult Details(int id)
         {
-            Author author = _As.GetById(id);
-            if (author == null)
-            {
-                return HttpNotFound();
-            }
-            return View(author);
+            return View();
         }
 
         // GET: Authors/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
         }
 
         // POST: Authors/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Surname,Email,Birthday")] Author author)
+        [Authorize]
+        public ActionResult Create(FormCollection collection)
         {
-            
-            if (ModelState.IsValid)
+            try
             {
-                _As.Add(author);
+                // TODO: Add insert logic here
+
                 return RedirectToAction("Index");
             }
-
-            return View(author);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Authors/Edit/5
+        [Authorize]
         public ActionResult Edit(int id)
         {
-            Author author = _As.GetById(id);
-            if (author == null)
-            {
-                return HttpNotFound();
-            }
-            return View(author);
+            return View();
         }
 
         // POST: Authors/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Surname,Email,Birthday")] Author author)
+        [Authorize]
+        public ActionResult Edit(int id, FormCollection collection)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _As.Update(author);
+                // TODO: Add update logic here
+
                 return RedirectToAction("Index");
             }
-            return View(author);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: Authors/Delete/5
+        [Authorize]
         public ActionResult Delete(int id)
         {
-            Author author = _As.GetById(id);
-            if (author == null)
-            {
-                return HttpNotFound();
-            }
-            return View(author);
+            return View();
         }
 
         // POST: Authors/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        [Authorize]
+        public ActionResult Delete(int id, FormCollection collection)
         {
-            Author author = _As.GetById(id);
-            _As.Remove(author);
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
+            try
             {
-                _As.Dispose();
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
             }
-            base.Dispose(disposing);
+            catch
+            {
+                return View();
+            }
         }
     }
 }
