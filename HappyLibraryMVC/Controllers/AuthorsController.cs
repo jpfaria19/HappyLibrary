@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Reflection;
-using System.Threading.Tasks;
 using System.Web.Mvc;
-using System.Web;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using BLL;
-using System.Globalization;
 
 namespace HappyLibraryMVC.Controllers
 {
@@ -56,12 +51,12 @@ namespace HappyLibraryMVC.Controllers
                     Name = collection["Name"],
                     Surname = collection["Surname"],
                     Email = collection["Email"],
-                    Birthday = DateTime.Parse(collection["Birthday"]) //TODO: ACERTAR O BIRTHDAY
+                    Birthday = DateTime.Parse(collection["Birthday"])
                 };
 
                 HttpClient client = MVCUtil.GetClient("userToken");
-                
-                JObject result = new JObject(author);
+
+                JObject result = JObject.FromObject(author);
 
                 var httpResponseMessage = client.PostAsJsonAsync("api/Authors", result).Result;
 
@@ -77,38 +72,25 @@ namespace HappyLibraryMVC.Controllers
         [Authorize]
         public ActionResult Edit(int id)
         {
-            return View();
+            HttpClient client = MVCUtil.GetClient("userToken");
+
+            Author atr = JsonConvert.DeserializeObject<Author>(client.GetStringAsync($"api/Authors/{id}").Result);
+
+            return View(atr);
         }
 
         // POST: Authors/Edit/5
         [HttpPost]
         [Authorize]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Author author)
         {
-            try
-            {
-                Author author = new Author()
-                {
-                    Name = collection["Name"],
-                    Surname = collection["Surname"],
-                    Email = collection["Email"],
-                    Birthday = DateTime.Parse(collection["Birthday"]),
-                };
+            HttpClient client = MVCUtil.GetClient("userToken");
 
-                HttpClient client = MVCUtil.GetClient("userToken");
+            JObject jObj = JObject.FromObject(author);
 
-                Author atr = JsonConvert.DeserializeObject<Author>(client.GetStringAsync($"api/Authors/{id}").Result);
+            var y = client.PutAsJsonAsync($"api/Authors", jObj).Result;
 
-                JObject result = new JObject(author);
-
-                var httpResponseMessage = client.PostAsJsonAsync("api/Authors", result).Result;
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return RedirectToAction("Index");
-            }
+            return RedirectToAction("Index");
         }
 
         // GET: Authors/Delete/5

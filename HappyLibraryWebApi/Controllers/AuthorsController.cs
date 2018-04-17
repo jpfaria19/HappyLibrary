@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using BLL;
+using Newtonsoft.Json.Linq;
 using Repositories.Repositories;
 using Service;
 
@@ -33,6 +35,12 @@ namespace HappyLibraryWebApi.Controllers
         public void Put([FromBody]Author author)
         {
             _aS.Update(author);
+        }
+
+        public void Delete(int authorId)
+        {
+            Author author = GetById(authorId);
+            _aS.Remove(author);
         }
 
         // DELETE: api/Author/5

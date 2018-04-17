@@ -47,9 +47,11 @@
             @Html.DisplayFor(modelItem => item.Books)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Deletar", "Deletar", "Home", routeValues: new { authorId = item.Id }, htmlAttributes: null)
+
+            @*<p>@Html.ActionLink(Model.Name, "Details", "UserProfile", routeValues: new { userId = Model.Id }, htmlAttributes: null)</p>*@
         </td>
     </tr>
 }
