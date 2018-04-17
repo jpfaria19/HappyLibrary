@@ -28,9 +28,10 @@ namespace BLL
         [DataType(DataType.EmailAddress, ErrorMessage = "E-mail em formato inválido")]
         public String Email { get; set; }
 
-        [Required(ErrorMessage = "Digite a data de nascimento"), Column(Order = 4)]
-        [DisplayName("Data de nascimento")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Display(Name = "Data de nascimento")]
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Birthday { get; set; }
         
         public virtual ICollection<Book> Books { get; set; }

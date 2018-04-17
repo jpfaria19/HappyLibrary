@@ -29,5 +29,9 @@ namespace HappyLibraryMVC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<BLL.Author> Authors { get; set; }
+
+        public System.Data.Entity.DbSet<BLL.Book> Books { get; set; }
     }
 }
